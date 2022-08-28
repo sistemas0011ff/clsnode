@@ -2,45 +2,6 @@
 class Medic{
     //Formas de inicializar una clase
     constructor(public name?: string, public lastname?: string, public cmp?: number){}
-
-    //1. Se asigna directamente el valor
-    /*
-    name: string = "name"
-    lastname: string = "Apellido"
-    cmp: number = 123123
-    */
-/*
-    name?: string
-    lastname?: string
-    cmp?: number
-*/
-    //2. La podemos inicializar a travez del constructor
-    /*constructor(){
-        this.name = "Eduardo"
-        this.lastname = "Fajardo"
-        this.cmp = 12313
-    }*/
-
-
-    //3. Pasando datos a travez del constructor
-    /*
-    constructor(name: string, lastname: string, cmp: number){
-        this.name = name
-        this.lastname = lastname
-        this.cmp = cmp
-    }*/
-
-
-    //4. Podemos inicializar desde un métodos INIT
-    /*constructor() {
-        this.init()
-    }
-
-    init(){
-        this.name  = "Eduardo"
-        this.lastname = "Fajardo"
-        this.cmp = 1231
-    }*/
 }   
 
 //Adaptador
@@ -113,7 +74,7 @@ const medic:Medic = new Medic("Eduardo", "Fajardo", 12312);
 const infraestructure : MedicRepository = new MedicInfraestructure();
 const application: MedicApplication = new MedicApplication(infraestructure);
 
-//3. En este punto visualizacmos como la capa de aplicación
+//3. En este punto visualizacmos como la capa de aplicación 
 //Interactua con la capa de arquitectura a travez de un puerto
 application.insert(medic);
 
