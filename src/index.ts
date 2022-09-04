@@ -6,7 +6,7 @@ const routes =
         //Ruta 01
         {
             path: "/users/descripcion",
-            execute: (request: http.IncomingMessage, response: http.ServerResponse) => {
+            execute (request: http.IncomingMessage, response: http.ServerResponse)  {
                 response.writeHead(200, { "Content-type": "text/plain" });
                 response.write("Usuario: Eduardo");
                 response.end();
