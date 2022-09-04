@@ -6,7 +6,8 @@
   "scripts": {
     "inicio": "node index.js",
     "start": "node index.js",
-    "start:ts": "ts-node index.ts"
+    "start:ts": "ts-node src/index.ts",
+    "dev":"nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
