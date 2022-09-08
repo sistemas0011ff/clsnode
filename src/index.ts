@@ -1,53 +1,22 @@
-import http from 'http';
 
 
-//Definiendo interfaz para rutas
-interface Route{
-    path: String;
-    execute: (request: http.IncomingMessage, response: http.ServerResponse) => void;
-}
 
-//Definiendo Rutas
-const routes : Route[] =
-    [
-        //Ruta 01
-        {
-            path: "/users/descripcion",
-            execute (request: http.IncomingMessage, response: http.ServerResponse)  {
-                response.writeHead(200, { "Content-type": "text/plain" });
-                response.write("Usuario: Eduardo");
-                response.end();
-            }
-        },
-        //Ruta 02   
-        {
-            path: "/users/list",
-            execute : (request: http.IncomingMessage, response: http.ServerResponse) => {
-                response.writeHead(200, { "Content-type": "application/json" });
-                response.write(JSON.stringify([{ username: "ana", active: false }, { username: "pepE", active: false }, { username: "eduardo2", active: true }, { username: "eduardo3", active: true }]));
-                response.end();
-            }
-        }
-    ];
 
-//// Función para buscsar rutas    
-const getRoute = (path : string): any =>  routes.find(route => route.path === path)
 
-//// Creando exceptions
-const exceptionNotFound = (request: http.IncomingMessage, response: http.ServerResponse) =>{
-    response.writeHead(404, { "content-type": "text/plain" });
-    response.write("Error - url no encontrada");
-    response.end();
-}
+//Se comenta por motivos que se ha creado la clase BOOTSTRAP
 
-const server = http.createServer((request: http.IncomingMessage, response: http.ServerResponse) => {
-    const route = getRoute(request.url as string);
+// import http from 'http';
+// import Route, {getRoute, exceptionNotFound} from './routes';
+
+// const server = http.createServer((request: http.IncomingMessage, response: http.ServerResponse) => 
+// {
+//     const route : Route | undefined = getRoute(request.url as string);
     
-    if (route){
-        route.excute(request,response);
-    }else{
-        exceptionNotFound(request, response);
-    }
-});
+//     if (route){
+//         route.execute(request,response);
+//     }else{
+//         exceptionNotFound(request, response);
+//     }
+// });
 
-server.listen(3001, () => console.log("Ejecutando en el puerto : 3000"));
+// server.listen(3001, () => console.log("Ejecutando en el puerto : 3000"));
