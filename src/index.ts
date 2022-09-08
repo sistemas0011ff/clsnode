@@ -1,5 +1,7 @@
+import ServerBootstrap from "./boottrap/server.bootstrap";
 
-
+const serverBootstrap = new ServerBootstrap();
+serverBootstrap.initialize();
 
 
 
