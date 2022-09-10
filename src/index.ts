@@ -1,7 +1,13 @@
 import ServerBootstrap, {Bootstrap} from "./boottrap/server.bootstrap";
 
 const serverBootstrap: Bootstrap = new ServerBootstrap();
-serverBootstrap.initialize();
+
+//serverBootstrap.initialize();
+//controlando la respuesta del servidor
+serverBootstrap
+.initialize()
+.then((message : string) =>  console.log(message))
+.catch((error : any) => console.log(error));
 
 
 
