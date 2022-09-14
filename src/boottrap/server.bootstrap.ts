@@ -1,4 +1,7 @@
-import http, {IncomingMessage, ServerResponse} from 'http';
+//Se comento por uso de express
+// import http, {IncomingMessage, ServerResponse} from 'http';
+import http from 'http';
+import {Application} from 'express';
 // export interface Bootstrap {
 //     initialize: () => void ;
 // }
@@ -31,7 +34,11 @@ export default class  extends Bootstrap{
 
     //Cambiando el modificador de acceso para que pueda crear la propiedad de formaautomática
     constructor(
-        private readonly app: (req: IncomingMessage, res: ServerResponse) => void){
+        //Se comenta para indicacrle que la propiedad app, reciba como parámetro la propiedad APPLICATION DE express que exporta la capa APP.ts
+        //private readonly app: (req: Request, res: Response) => void
+        //se agregó para indeicar que la propiedad app sea de tipo Application, que es una classe del framework EXPRESS
+        private readonly app: Application,
+        ){
         super();
         // this.app = app;
     }
@@ -41,6 +48,8 @@ export default class  extends Bootstrap{
         //const promise = new Promise<any>((resolve, reject)=> {
         return new Promise<any>((resolve, reject)=> {
 
+            //Luego del cambio realizado en la parte del constructor
+            //ahora se esta creando un servidor que recibe como parametro un objeto de tipo express    
             const server = http.createServer(this.app);
             /*
             //La constante server recibe el resultado de las rutas solicitadas
