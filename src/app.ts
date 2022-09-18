@@ -72,17 +72,16 @@ class App {
     //Montando rutas para controlar el caso de errores
     mountError():void
     {
-        // this.expressApp.use((req: Request, res: Response)=>{
-        //     handlerErrors.notFound
-        //     //Se comenta por que será remplazado por clase
-        //     //res.status(400).send("Path not found");
-        // })
+        console.log("Entro a error");           
+        this.expressApp.use(handlerErrors.notFound)
+            //Se comenta por que será remplazado por clase
+            //res.status(400).send("Path not found");
         // https://stackoverflow.com/questions/15601703/difference-between-app-use-and-app-get-in-express-js
         //Se reemplaza.. quitando lso ** ya que si no se tiene esos asteriscos que significa
         //todos.. hace los mismo
-        this.expressApp.use("**",(req: Request, res: Response)=>{
-            res.status(400).send("Path not found");
-        })
+        // this.expressApp.use("**",(req: Request, res: Response)=>{
+        //     res.status(400).send("Path not found");
+        // })
 
         // this.expressApp.get("**",(req:Request, res:Response)=>{
         //     res.status(404).send("Path not found");
