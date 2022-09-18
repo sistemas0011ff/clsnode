@@ -5,6 +5,7 @@ import  {Request, Response} from 'express';
 import express, {Application} from 'express';
 import routerUser from './modules/user/interfaces/router';
 import handlerErrors from './helpers/errors'
+import routerHealth from './helpers/health'
 
 //Clase que hace refeerncia a APPLICATION  de la arquitectura HEXAGONAL
 //Clase modificada paraa interactuar con el framwork express
@@ -21,10 +22,18 @@ class App {
         //Se inicializa la propiedad
         this.expressApp = express(); //Inicializando la interfaz application
         //Se cargan las rutas
+        this.mountHealthCheck();
         this.mountRoutes();
         this.mountError();
         
     }
+
+    //Función para validar si la ruta esta activa
+    mountHealthCheck()
+    {
+        this.expressApp.use("/", routerHealth);
+    }
+
     //Montando RUTAS con express
     mountRoutes():void 
     {
