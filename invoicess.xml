@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<Invoice xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<ds:Signature Id="SignatureSP">
+					<SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+						<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+						<Reference URI="">
+							<Transforms>
+								<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+							</Transforms>
+							<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+							<DigestValue>5LhmCBBErEWtYH6Rmis383loJGY=</DigestValue>
+						</Reference>
+					</SignedInfo>
+					<SignatureValue xmlns="http://www.w3.org/2000/09/xmldsig#">PdoE2TMA4pLogNfELpRm47YF/Qon8UudsJQaaQA3kJOc7wlsv6k8KXAfoQayE0Ub+TP9TciLLRXcKGpyTdqUoHxr3gb516UGwEhahJ8Aglo77A4yJxrTxeTreucZjYOpJ/Q+oG53cKUW8jSS1wwEF+qk+XGSca7Eiq+BdTlOpL7NH2daeXD5x4Qt6S0MfGQlxIjDOiq37bsBY6JYtGvrlXkYUDrN4C2BGzRLILHE5TbKFFdnHopLDP0AsnqS6L4XMuBXZ3CAIvDaFPNZJNW4WDzlgmcFhdmD6HDWC3hULhgVOYTGGAR35ZGtLf1Pp0TMJkBPytXCQOwWL+tog3kYhg==</SignatureValue>
+					<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<X509Data>
+							<X509SubjectName>CN=||USO TRIBUTARIO|| VILELA ORDINOLA SANTOS ALBERTO CDT 10036507867, OU=10036507867, OU=EREP_SUNAT_2022000270353, OID.2.5.4.97=NTRPE-10036507867, O=VILELA ORDINOLA SANTOS ALBERTO, L=MARCAVELICA, S=PIURA-SULLANA, C=PE</X509SubjectName>
+							<X509Certificate>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</X509Certificate>
+						</X509Data>
+					</KeyInfo>
+				</ds:Signature>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>2.0</cbc:CustomizationID>
+	<cbc:ID>FY01-00000202</cbc:ID>
+	<cbc:IssueDate>2022-09-09</cbc:IssueDate>
+	<cbc:IssueTime>15:04:18</cbc:IssueTime>
+	<cbc:InvoiceTypeCode listID="0101" listAgencyName="PE:SUNAT" listName="Tipo de Documento" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo01">01</cbc:InvoiceTypeCode>
+	<cbc:Note languageLocaleID="1000">CIENTO SETENTA CON 00/100</cbc:Note>
+	<cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyName="United Nations Economic Commission for Europe" listName="Currency">PEN</cbc:DocumentCurrencyCode>
+	<cac:Signature>
+		<cbc:ID>sing</cbc:ID>
+		<cac:SignatoryParty>
+			<cac:PartyIdentification>
+				<cbc:ID>10036507867</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>VILELA ORDINOLA SANTOS ALBERTO</cbc:Name>
+			</cac:PartyName>
+		</cac:SignatoryParty>
+		<cac:DigitalSignatureAttachment>
+			<cac:ExternalReference>
+				<cbc:URI>sing</cbc:URI>
+			</cac:ExternalReference>
+		</cac:DigitalSignatureAttachment>
+	</cac:Signature>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="6">10036507867</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyTaxScheme>
+				<cbc:RegistrationName>VILELA ORDINOLA SANTOS ALBERTO</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="6" schemeName="Documento de Identidad" schemeAgencyName="PE:SUNAT" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">10036507867</cbc:CompanyID>
+				<cac:RegistrationAddress />
+				<cac:TaxScheme>
+					<cbc:ID>-</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>VILELA ORDINOLA SANTOS ALBERTO</cbc:RegistrationName>
+				<cac:RegistrationAddress>
+					<cbc:AddressTypeCode listAgencyID="PE:SUNAT" listName="Establecimientos anexos">0000</cbc:AddressTypeCode>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="6" schemeName="Documento de Identidad" schemeAgencyName="PE:SUNAT" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">20526270364</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyTaxScheme>
+				<cbc:RegistrationName>UNIVERSIDAD NACIONAL DE FRONTERA</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="6" schemeName="Documento de Identidad" schemeAgencyID="PE:SUNAT" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">20526270364</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>-</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>UNIVERSIDAD NACIONAL DE FRONTERA</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:PaymentTerms>
+		<cbc:ID>FormaPago</cbc:ID>
+		<cbc:PaymentMeansID>Credito</cbc:PaymentMeansID>
+		<cbc:Amount currencyID="PEN">170.00</cbc:Amount>
+	</cac:PaymentTerms>
+	<cac:PaymentTerms>
+		<cbc:ID>FormaPago</cbc:ID>
+		<cbc:PaymentMeansID>Cuota001</cbc:PaymentMeansID>
+		<cbc:Amount currencyID="PEN">170.00</cbc:Amount>
+		<cbc:PaymentDueDate>2022-09-10</cbc:PaymentDueDate>
+	</cac:PaymentTerms>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="PEN">25.93</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="PEN">144.07</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="PEN">25.93</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UN/ECE 5305" schemeName="Tax Category Identifier" schemeAgencyName="United Nations Economic Commission for Europe">S</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">1000</cbc:ID>
+					<cbc:Name>IGV</cbc:Name>
+					<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="PEN">144.07</cbc:LineExtensionAmount>
+		<cbc:TaxInclusiveAmount currencyID="PEN">170.00</cbc:TaxInclusiveAmount>
+		<cbc:AllowanceTotalAmount currencyID="PEN">0.00</cbc:AllowanceTotalAmount>
+		<cbc:ChargeTotalAmount currencyID="PEN">0.00</cbc:ChargeTotalAmount>
+		<cbc:PayableAmount currencyID="PEN">170.00</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyID="United Nations Economic Commission for Europe">2.00</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="PEN">67.80</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="PEN">40.00</cbc:PriceAmount>
+				<cbc:PriceTypeCode listAgencyName="PE:SUNAT" listName="Tipo de Precio" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="PEN">12.20</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="PEN">67.80</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="PEN">12.20</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeID="UN/ECE 5305" schemeName="Tax Category Identifier" schemeAgencyName="United Nations Economic Commission for Europe">S</cbc:ID>
+					<cbc:Percent>18.00</cbc:Percent>
+					<cbc:TaxExemptionReasonCode listAgencyName="PE:SUNAT" listName="Afectacion del IGV" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07">10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>SERVICIO PARCHADO DE LLANTAS POSTERIOR BUS EGJ - 839</cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID>UND1</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="PEN">33.8983050847</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyID="United Nations Economic Commission for Europe">1.00</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="PEN">33.90</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="PEN">40.00</cbc:PriceAmount>
+				<cbc:PriceTypeCode listAgencyName="PE:SUNAT" listName="Tipo de Precio" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="PEN">6.10</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="PEN">33.90</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="PEN">6.10</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeID="UN/ECE 5305" schemeName="Tax Category Identifier" schemeAgencyName="United Nations Economic Commission for Europe">S</cbc:ID>
+					<cbc:Percent>18.00</cbc:Percent>
+					<cbc:TaxExemptionReasonCode listAgencyName="PE:SUNAT" listName="Afectacion del IGV" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07">10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>SERVICIO PARCHADO DE LLANTA CISTERNA EAC - 704</cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID>UND2</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="PEN">33.8983050847</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>3</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyID="United Nations Economic Commission for Europe">1.00</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="PEN">21.19</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="PEN">25.00</cbc:PriceAmount>
+				<cbc:PriceTypeCode listAgencyName="PE:SUNAT" listName="Tipo de Precio" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="PEN">3.81</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="PEN">21.19</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="PEN">3.81</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeID="UN/ECE 5305" schemeName="Tax Category Identifier" schemeAgencyName="United Nations Economic Commission for Europe">S</cbc:ID>
+					<cbc:Percent>18.00</cbc:Percent>
+					<cbc:TaxExemptionReasonCode listAgencyName="PE:SUNAT" listName="Afectacion del IGV" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07">10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>SERVICIO PARCHADO LLANTA DELANTERA CAMIONETA EAC - 727</cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID>UND3</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="PEN">21.1864406780</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>4</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyID="United Nations Economic Commission for Europe">1.00</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="PEN">21.19</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="PEN">25.00</cbc:PriceAmount>
+				<cbc:PriceTypeCode listAgencyName="PE:SUNAT" listName="Tipo de Precio" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="PEN">3.81</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="PEN">21.19</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="PEN">3.81</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeID="UN/ECE 5305" schemeName="Tax Category Identifier" schemeAgencyName="United Nations Economic Commission for Europe">S</cbc:ID>
+					<cbc:Percent>18.00</cbc:Percent>
+					<cbc:TaxExemptionReasonCode listAgencyName="PE:SUNAT" listName="Afectacion del IGV" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07">10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>SERVICIO PARCHADO LLANTA POSTERIOR CAMIONETA EGY - 653</cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID>UND4</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="PEN">21.1864406780</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>
