@@ -4,9 +4,6 @@ import { UserRepository } from "../../domain/user.repository";
 import UserInfraestructure from "../../infraestructure/user.infraestructure";
 import Controller from './controller';
 
-
-
-
 const infraestructure: UserRepository = new UserInfraestructure();
 const application = new UserApplication(infraestructure);
 const controller = new Controller(application);
@@ -23,8 +20,11 @@ class UserRouter{
     //Montamos las rutas, similar a la clase app
     mountRoutes()
     {      
-
-        this.expressRouter.get("/", controller.list);
+        //Arquitectura FASE2- Ejemplo de uso de no bindeo.. uso desde el controller
+        //this.expressRouter.get("/", controller.list);
+        this.expressRouter.get("/", (req:Request,res:Response)=> {
+            controller.list(req, res);
+        })
 
         /*
         //2. Se comentó por que se va a trabajar con los componentes de la arquitectura

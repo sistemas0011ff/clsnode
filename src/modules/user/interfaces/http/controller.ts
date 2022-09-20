@@ -21,7 +21,8 @@ la capa APPLICATIO-CORE con la INFRAESTRUCTURE-adapater  a travez del PUERTO-rep
 export default class{
 
     constructor(private application: UserApplication ) {
-        this.list = this.list.bind(this);
+        //Se comenta para usar de otra manera el BIND en el cotroller
+        //this.list = this.list.bind(this);
     }
 
     list(req:Request, res:Response){
