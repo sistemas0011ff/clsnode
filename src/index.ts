@@ -8,26 +8,6 @@ import ServerBootstrap, {Bootstrap} from "./boottrap/server.bootstrap";
 //en este caso las rutas se definieron el el APP.ts
 const serverBootstrap: Bootstrap = new ServerBootstrap(app);
 
-
-/* 
-//Comentado para camboiarlo por una función anónima autoemvocada
-//Función de tipo ASYNC que permite validar la conexión con el servidor
-const start =async () => {
-    try
-    {
-        const resultServer = await serverBootstrap.initialize();
-        console.log(resultServer);
-    }
-    catch(error)
-    {
-        console.log(error);
-    }
-}
-
-//Ejecutando función async
-start();
-*/
-
 //Función Auto invocada
 (async () => {
     try
