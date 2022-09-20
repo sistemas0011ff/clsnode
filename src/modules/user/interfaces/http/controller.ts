@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import UserApplication from "../../application/user.application";
 import User, { UserProperties } from "../../domain/user";
-import { UserRepository } from "../../domain/user.repository";
-import UserInfraestructure from "../../infraestructure/user.infraestructure";
+// import { UserRepository } from "../../domain/user.repository";
+// import UserInfraestructure from "../../infraestructure/user.infraestructure";
 
 
 //Esto lo pasamos al controller para que sea inyectado

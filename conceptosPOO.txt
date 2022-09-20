@@ -1,0 +1,21 @@
+#ref. link 1 : https://www.futura-sciences.com/tech/definitions/informatique-programmation-orientee-objet-19301/
+
+1.POO: Gracias a sus propiedades de herencia y polimorfismo, una clase es reutilizable por el programa para el que fue creada, pero también por otros programas orientados a objetos.
+
+2. Los conceptos clave de la programación orientada a objetos
+La clase: una clase es un conjunto de código que contiene variables y funciones que permiten crear objetos. Una clase puede contener varios objetos.
+Objetos: un objeto es un bloque de código que combina variables y funciones, llamados atributos y métodos respectivamente. Los atributos definen las características de un objeto de una clase, los métodos definen las funciones específicas de las instancias de una clase.
+Encapsulación: la encapsulación encierra los datos sin procesar en una cápsula para evitar errores de manejo o corrupción de datos. La encapsulación, por lo tanto, permite ocultar métodos y atributos fuera de la clase.
+Abstracción: el concepto de abstracción es ocultar detalles innecesarios al usuario final de una clase. Por lo tanto, podrá utilizar una clase en su código de programación sin saber cómo se desarrolló.
+Herencia: el concepto de herencia significa que una clase B heredará los mismos atributos y métodos que una clase A. Cuando se crea una instancia de la clase B, podemos llamar a los métodos presentes en la clase A por clase B. Esto ahorrará tiempo para el programador .
+Polimorfismo: cuando una clase hereda los métodos de una clase padre, es posible sobrecargar un método, que consiste en redefinir el método de la clase padre para que las dos clases no realicen las mismas tareas.
+
+
+#ref. Diferencias entre encapsulación y abstracción
+#link de referencia: https://www.guru99.com/difference-between-abstraction-and-encapsulation.html
+
+abstracción: es un concepto de programación orientada a objetos que se centra únicamente en los datos relevantes de un objeto. Oculta los detalles de fondo y enfatiza los puntos de datos esenciales para reducir la complejidad y aumentar la eficiencia. Por lo general, solo conserva la información que es más relevante para ese proceso específico.
+encapsulación: La encapsulación es un método para hacer que un sistema complejo sea más fácil de manejar para los usuarios finales.
+El usuario no necesita preocuparse por los detalles internos y las complejidades del sistema. La encapsulación es un proceso de envolver los datos y el código, que operan sobre los datos en una sola entidad. Puede asumirlo como un envoltorio protector que detiene el acceso aleatorio del código definido fuera de ese envoltorio.
+
+comparación: Al comparar la encapsulación con la abstracción, la abstracción resuelve el problema a nivel de diseño, mientras que la encapsulación resuelve el problema a nivel de implementación.
