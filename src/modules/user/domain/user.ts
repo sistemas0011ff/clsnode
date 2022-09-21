@@ -3,7 +3,7 @@
 // para luego poder unirlas
 
 import { IEntity } from "src/modules/shared/interface/entity.interface";
-import { v4 as uuidv4 } from 'uuid';
+
 
 interface UserRequired {
     // id: number;
@@ -61,8 +61,9 @@ export default class User  implements IEntity<UserProperties,UserUpdate> {
     constructor(userProperties: UserProperties) //Se comenta ya que se va a construir solo con la info del insert
     // constructor(userRequired: Required<UserRequired>)
     {
-        this.guid = uuidv4();
-        this.refreshToken = "";//valor momentaneo
+        this.active = true;
+        // this.guid = uuidv4();
+        // this.refreshToken = "";//valor momentaneo
         Object.assign(this, userProperties)
     }   
 

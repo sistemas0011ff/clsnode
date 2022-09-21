@@ -6,14 +6,14 @@
 //Son por donde los adaptadores se comunican 
 //con el core o mal llamando aplicación
 
-import User from "./user";
+import User, { UserProperties } from "./user";
 
 
 //Definiendo repositorio
 export interface UserRepository{
     list(): User[];
     listOne(guid: string) : User;
-    insert(user: User) : void;
+    insert(user: User) : UserProperties;
     update(user: User) : void;    
     delete(user: User) : void;
 }

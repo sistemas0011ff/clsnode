@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import UserApplication from "../../application/user.application";
 import User, { UserInsert, UserProperties } from "../../domain/user";
+import UserFactory from "../../domain/user.factory";
 // import { UserRepository } from "../../domain/user.repository";
 // import UserInfraestructure from "../../infraestructure/user.infraestructure";
 
@@ -48,7 +49,12 @@ export default class{
     }
 
     insert(req:Request,res:Response){
+
+        const {name, lastname, email, password} = req.body;
+        const user: User = new UserFactory().create(name, lastname, email, password);
+        const result = this.application.insert(user);
         // res.json(req.body);
+        /*
         const body : UserInsert = req.body;
         const properties : UserProperties = {
             name : body.name,
@@ -60,11 +66,14 @@ export default class{
         const user = new User(properties);
         
         const result = this.application.insert(user);
+        */
 
+
+        res.json(result);
         //Creando instancia con datos para testear función
         
         // const properties : UserProperties = {
-        //     id:10,
+        //     id:10,   
         //     name: "Eduardo",
         //     lastname : "Fajardo",
         //     email: "efajardo@xxx.com",
