@@ -24,8 +24,12 @@ class UserRouter{
         //this.expressRouter.get("/", controller.list);
         this.expressRouter.get("/", (req:Request,res:Response)=> {
             controller.list(req, res);
-        })
+        });
 
+        //Usando otra forma de interactuar con el controller - BIND
+        
+        this.expressRouter.get("/:guid", controller.listOne);
+        this.expressRouter.post("/", controller.insert);
         /*
         //2. Se comentó por que se va a trabajar con los componentes de la arquitectura
         //Se obtiene lógica de las rutas desde el controlador  

@@ -3,19 +3,21 @@
 // para luego poder unirlas
 
 import { IEntity } from "src/modules/shared/interface/entity.interface";
-
+import { v4 as uuidv4 } from 'uuid';
 
 interface UserRequired {
-    id: number;
+    // id: number;
     name: string;
     lastname: string;
     email: string;
     password: string;
+    // guid: string;
 }
 
 interface UserOptional {
     refreshtoken: string;
     active: boolean;
+    guid: string;
 } 
 
 //Siguiendo el concepto de cleancode, cuando se tiene mas de 4 parámetros se requiere crear una interface
@@ -31,6 +33,12 @@ type UserUpdate = {
     active: boolean;
 }
 
+export type UserInsert = {
+    name: string; 
+    lastname: string; 
+    password: string; 
+    email: string;
+}
 
 
 //Creando un tipo de propiedad para poder condicionar 
@@ -41,17 +49,20 @@ export type UserProperties = Required<UserRequired>  & Partial<UserOptional>
 // export default class User  {
 //Se agregá clase que implementa la INTERFACE    
 export default class User  implements IEntity<UserProperties,UserUpdate> {
-    private readonly id: number;
+    // private readonly id: number;
     private name:string;
     private lastname:string;
     private readonly email:string;
     private password:string;
     private refreshToken:string;
     private active:boolean | null;
-    
+    private readonly guid: string ;
     //Constructo asigna las propiedades
-    constructor(userProperties: UserProperties)
+    constructor(userProperties: UserProperties) //Se comenta ya que se va a construir solo con la info del insert
+    // constructor(userRequired: Required<UserRequired>)
     {
+        this.guid = uuidv4();
+        this.refreshToken = "";//valor momentaneo
         Object.assign(this, userProperties)
     }   
 
@@ -97,13 +108,14 @@ export default class User  implements IEntity<UserProperties,UserUpdate> {
     // properties(){
     properties() : UserProperties {   
         return {
-            id: this.id,
+            // id: this.id,
             name : this.name,
             lastname : this.lastname,
             email : this.email,
             password : this.password,
             refreshtoken : this.refreshToken,
             active : this.active,
+            guid: this.guid,
         }
     }    
 

@@ -11,8 +11,20 @@ class App {
         this.expressApp = express(); //Inicializando la interfaz application
         //Se cargan las rutas
         this.mountHealthCheck();
+        this.mountMiddlewares();
         this.mountRoutes();
         this.mountError();        
+        
+    }
+
+
+    //Implementamos un middlewares de express para poder parsear el objeo json
+    mountMiddlewares(){
+        //Agregamos middwalre para que todo las rutas
+        //que requieran recibir parametro de tipo JSON sea pareseado
+        this.expressApp.use(express.json());
+        //Usamos un segundo middleware para solo obtener el json que necesitamos
+        this.expressApp.use(express.urlencoded({extended : true}))
     }
 
     //Función para validar si la ruta esta activa

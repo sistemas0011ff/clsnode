@@ -1,0 +1,7 @@
+Entidad
+ -id
+ -nombre
+ -lastname
+ -email
+ -activ
+ -licenseDriver
