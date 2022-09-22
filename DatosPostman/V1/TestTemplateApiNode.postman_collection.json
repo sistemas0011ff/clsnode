@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "279469cc-4481-4c6d-ad37-1514d96f10c3",
+		"name": "TestTemplateApiNode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PATH}}/user",
+							"host": [
+								"{{API_PATH}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Arturo\",\r\n    \"lastname\": \"Fajardo\",\r\n    \"email\": \"efajardo@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PATH}}/user",
+							"host": [
+								"{{API_PATH}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"name\": \"John\",\r\n        \"lastname\": \"Fajardo\",\r\n        \"email\": \"efajardo@gmail.com\",\r\n        \"password\": \"123\",\r\n        \"active\": true,\r\n        \"refreshtoken\": \"abc\",\r\n        \"guid\": \"c2db12f8-43c5-4031-82b9-ef16747cad8d\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PATH}}/user/c2db12f8-43c5-4031-82b9-ef16747cad8d",
+							"host": [
+								"{{API_PATH}}"
+							],
+							"path": [
+								"user",
+								"c2db12f8-43c5-4031-82b9-ef16747cad8d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PATH}}/user/ea4dfe95-3127-4f22-8350-615f0ae87ee7",
+							"host": [
+								"{{API_PATH}}"
+							],
+							"path": [
+								"user",
+								"ea4dfe95-3127-4f22-8350-615f0ae87ee7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

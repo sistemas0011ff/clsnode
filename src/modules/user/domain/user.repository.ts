@@ -11,9 +11,9 @@ import User, { UserProperties } from "./user";
 
 //Definiendo repositorio
 export interface UserRepository{
-    list(): User[];
+    list(): UserProperties[];
     listOne(guid: string) : User;
     insert(user: User) : UserProperties;
-    update(user: User) : void;    
+    update(user: User) : UserProperties;    
     delete(user: User) : void;
 }

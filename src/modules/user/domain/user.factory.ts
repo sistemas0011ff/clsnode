@@ -14,7 +14,7 @@ export default class UserFactory {
             email,
             password,
             guid: uuidv4(),
-            refreshtoken : "",
+            refreshtoken : uuidv4(),
         }
 
         const user = new User(userPropierties);

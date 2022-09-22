@@ -43,7 +43,7 @@ class App {
         //para cualquier ruta padre que empece con use,
         //Quiero que el manejador de ruts se RouterUser
         this.expressApp.use("/user",routerUser);
-
+        
        
         //Se comenta las rutas creadas anteriormente ya que lo vamos a trabajar... con  la ruta padre de forma modular
  

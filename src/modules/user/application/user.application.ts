@@ -1,7 +1,7 @@
 //En este punto realizaremos la inyección de la dependencia
 // a la aplicación o CORE
 
-import User from "../domain/user";
+import User, { UserProperties } from "../domain/user";
 import { UserRepository } from "../domain/user.repository";
 
 export default class UserApplication {
@@ -21,9 +21,10 @@ export default class UserApplication {
     insert(user: User) {
         return this.userRepository.insert(user);
     }
-
-    update(user: User) {
-        return this.userRepository.update(user);
+    // update(user: User) : User o Void{
+    // update(user: User) {
+    update(user: User) : UserProperties{
+        return this.userRepository.update(user) 
     }
 
     delete(user: User) {

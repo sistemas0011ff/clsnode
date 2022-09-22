@@ -26,11 +26,16 @@ interface UserOptional {
 //con los tipos no se puede concatenar conjuto de tipos de datos
 //con las interfaces si se puede hacer.. teniendo dos interfacecs por separadas con el mismo nombre... luego se unen
 type UserUpdate = {
-    name: string; 
-    lastname: string; 
-    password: string; 
-    refreshToken: string;
-    active: boolean;
+    name: string;
+    lastname: string;
+    email: string;
+    password: string;
+    // name: string; 
+    // lastname: string; 
+    // password: string; 
+    // refreshToken: string;
+    // active: boolean;
+
 }
 
 export type UserInsert = {
@@ -55,7 +60,7 @@ export default class User  implements IEntity<UserProperties,UserUpdate> {
     private readonly email:string;
     private password:string;
     private refreshToken:string;
-    private active:boolean | null;
+    private active:boolean ;
     private readonly guid: string ;
     //Constructo asigna las propiedades
     constructor(userProperties: UserProperties) //Se comenta ya que se va a construir solo con la info del insert
