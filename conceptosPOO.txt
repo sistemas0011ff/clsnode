@@ -19,3 +19,8 @@ encapsulación: La encapsulación es un método para hacer que un sistema comple
 El usuario no necesita preocuparse por los detalles internos y las complejidades del sistema. La encapsulación es un proceso de envolver los datos y el código, que operan sobre los datos en una sola entidad. Puede asumirlo como un envoltorio protector que detiene el acceso aleatorio del código definido fuera de ese envoltorio.
 
 comparación: Al comparar la encapsulación con la abstracción, la abstracción resuelve el problema a nivel de diseño, mientras que la encapsulación resuelve el problema a nivel de implementación.
+
+
+Nota* Servicios por capa : Recordadr que extraer la complejidad de cada capa, a esa logica que ha sido extraida
+se le llama servicio, pueden haber servicio de aplicación, servicio de infraestructura, servicios de dominio, 
+ejemplo la encriptación del password
