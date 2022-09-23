@@ -3,11 +3,27 @@ import UserFactory from "../domain/user.factory";
 import { UserRepository } from "../domain/user.repository";
 import { EmailVO } from "../domain/value-objects/email.vo";
 
+let users:User[] = [];
+
+const promisesUsers = [
+    new UserFactory().create
+    ("John", "Fajardo", EmailVO.create("efajardo@gmail.com"), "123" ),
+    new UserFactory().create
+    ( "Eduardo", "Fajardo", EmailVO.create("efajardo@gmail.com"),  "123")
+];
+
+Promise.all(promisesUsers).then(result => users = result);
+
+
+
+/*
+//Se cambiará esto.. a que devuelva un valor de tipo async para corregir los inconvenientes presentados
 const users : User[] = [
     new UserFactory().create( "John", "Fajardo", EmailVO.create("efajardo@gmail.com"), "123" ),
     new UserFactory().create( "Eduardo", "Fajardo", EmailVO.create("efajardo@gmail.com"),  "123")
 ]
 
+*/
 export default class UserInfraestructure implements UserRepository {
     list(): UserProperties[] {
         return users.filter((el:User)=>el.properties().active).map((el : User) => el.properties()) 

@@ -33,10 +33,13 @@ export default class{
         res.json(dto);
     }
 
-    insert(req:Request,res:Response){
+
+    //Se agregó las palabras reservada asyn y away respectivamente.
+    //ya que fue cambiado el método createe para encriptar el password
+    async insert(req:Request,res:Response){
 
         const {name, lastname, email, password} = req.body;
-        const user: User = new UserFactory().create(
+        const user: User =  await new  UserFactory().create(
             name, 
             lastname,
             EmailVO.create(email), 

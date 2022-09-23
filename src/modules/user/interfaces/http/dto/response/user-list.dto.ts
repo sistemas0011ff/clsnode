@@ -7,6 +7,7 @@ export interface UserDTO{
     name: string,
     lastname: string,
     guid: string,
+    password: string
 };
 
 
@@ -29,7 +30,8 @@ export class UserListMapping  extends DTO<UserPropertiesVal,UserListDTO> {
             return {
                 name : user.name,
                 lastname :  user.lastname,
-                guid: user.guid
+                guid: user.guid,
+                password: user.password
             }    ;
         });
     };
