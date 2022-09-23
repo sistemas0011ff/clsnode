@@ -1,15 +1,16 @@
 import User, { UserProperties } from "../domain/user";
 import UserFactory from "../domain/user.factory";
 import { UserRepository } from "../domain/user.repository";
+import { EmailVO } from "../domain/value-objects/email.vo";
 
 const users : User[] = [
-    new UserFactory().create( "John", "Fajardo", "efajardo@gmail.com", "123" ),
-    new UserFactory().create( "Eduardo", "Fajardo", "efajardo@gmail.com",  "123")
+    new UserFactory().create( "John", "Fajardo", EmailVO.create("efajardo@gmail.com"), "123" ),
+    new UserFactory().create( "Eduardo", "Fajardo", EmailVO.create("efajardo@gmail.com"),  "123")
 ]
 
 export default class UserInfraestructure implements UserRepository {
     list(): UserProperties[] {
-        return users.map((el : User) => el.properties());
+        return users.filter((el:User)=>el.properties().active).map((el : User) => el.properties()) 
     }
     listOne(guid: string): User {
         // return Object.assign(
@@ -30,7 +31,7 @@ export default class UserInfraestructure implements UserRepository {
         //             return el.properties().guid === guid ;
         //         })
 
-        return users.find((el:User) => 
+        return users.filter((el:User)=>el.properties().active).find((el:User) => 
                 el.properties().guid === guid 
         )
     }
@@ -47,10 +48,10 @@ export default class UserInfraestructure implements UserRepository {
             );
 
         users[userIndex] = user;
-        return users;
+        return user;
     }
-    delete(user: User): void {
-        user.delete();
-    }
+    // delete(user: User): void {
+    //     user.delete();
+    // }
 
 }

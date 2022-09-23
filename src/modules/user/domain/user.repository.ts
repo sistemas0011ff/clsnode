@@ -15,5 +15,5 @@ export interface UserRepository{
     listOne(guid: string) : User;
     insert(user: User) : UserProperties;
     update(user: User) : UserProperties;    
-    delete(user: User) : void;
+    // delete(user: User) : void;
 }

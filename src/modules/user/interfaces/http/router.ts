@@ -24,6 +24,7 @@ class UserRouter{
         this.expressRouter.get("/:guid", controller.listOne);
         this.expressRouter.post("/", controller.insert);
         this.expressRouter.put("/:guid", controller.update);
+        this.expressRouter.delete("/:guid", controller.delete);
     }
 
 }

@@ -3,13 +3,14 @@
 // para luego poder unirlas
 
 import { IEntity } from "src/modules/shared/interface/entity.interface";
+import { EmailVO } from "./value-objects/email.vo";
 
 
 interface UserRequired {
     // id: number;
     name: string;
     lastname: string;
-    email: string;
+    email: EmailVO;
     password: string;
     // guid: string;
 }
@@ -28,7 +29,7 @@ interface UserOptional {
 type UserUpdate = {
     name: string;
     lastname: string;
-    email: string;
+    email: EmailVO;
     password: string;
     // name: string; 
     // lastname: string; 
@@ -38,12 +39,12 @@ type UserUpdate = {
 
 }
 
-export type UserInsert = {
-    name: string; 
-    lastname: string; 
-    password: string; 
-    email: string;
-}
+// export type UserInsert = {
+//     name: string; 
+//     lastname: string; 
+//     password: string; 
+//     email: string;
+// }
 
 
 //Creando un tipo de propiedad para poder condicionar 
@@ -57,7 +58,7 @@ export default class User  implements IEntity<UserProperties,UserUpdate> {
     // private readonly id: number;
     private name:string;
     private lastname:string;
-    private readonly email:string;
+    private readonly email:EmailVO;
     private password:string;
     private refreshToken:string;
     private active:boolean ;

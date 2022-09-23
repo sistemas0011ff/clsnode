@@ -2,6 +2,10 @@ import { Request, Response } from "express";
 import UserApplication from "../../application/user.application";
 import User from "../../domain/user";
 import UserFactory from "../../domain/user.factory";
+import { EmailVO } from "../../domain/value-objects/email.vo";
+import { UserInsertDTO, UserInsertMapping } from "./dto/response/user-insert.dto";
+import { UserListOneDTO, UserListOneMapping } from "./dto/response/user-list-one.dto";
+import { UserListDTO, UserListMapping } from "./dto/response/user-list.dto";
 
 export default class{
 
@@ -9,26 +13,34 @@ export default class{
         this.listOne = this.listOne.bind(this);
         this.insert = this.insert.bind(this);
         this.update = this.update.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
     list(req:Request, res:Response){
+
         const  list = this.application.list();
-        res.json(list);
+        const dto : UserListDTO = new UserListMapping().execute(list);
+        res.json(dto);
     }
 
     listOne(req:Request, res:Response){    
         console.log("Intro: ListOne - Ini");
         const {guid} = req.params; //deestructuración        
-        
-        const list = this.application.listOne(guid);
+
+        const list = this.application.listOne(guid).properties();
+        const dto  : UserListOneDTO = new UserListOneMapping().execute(list);
         console.log("Intro: ListOne - Ini");
-        res.json(list);
+        res.json(dto);
     }
 
     insert(req:Request,res:Response){
 
         const {name, lastname, email, password} = req.body;
-        const user: User = new UserFactory().create(name, lastname, email, password);
+        const user: User = new UserFactory().create(
+            name, 
+            lastname,
+            EmailVO.create(email), 
+            password);
         const result = this.application.insert(user);        
         res.json(result);
 
@@ -40,15 +52,25 @@ export default class{
         const { name, lastname, email, password } = req.body;
 
         const user = this.application.listOne(guid);
-        user.update({name, lastname, email, password });
+        user.update({
+            name, 
+            lastname, 
+            email: EmailVO.create(email), 
+            password });
         
-        const result = this.application.update(user);
+        const data = this.application.update(user);
+        const dto : UserInsertDTO = new UserInsertMapping().execute(data);
         
-        res.json(result);
+        res.json(dto);
     }
 
     delete(req:Request, res:Response){
+        const {guid} = req.params;
+        const user = this.application.listOne(guid);
+        user.delete();
+        const result = this.application.update(user);
         
+        res.json(result);
     }
     
 }

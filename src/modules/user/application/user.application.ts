@@ -10,8 +10,14 @@ export default class UserApplication {
     //Ahora en el core.. podemos crear nuestros propios métodos
     //no tiene que llamarse necesariamente igual a lo del repository
 
+
     list() {
+        //Aplicando DTO para mostrar solo la data que corresponde 
+        // const data = this.userRepository.list(); 
+        // const dto : UserListDTO = new UserListMapping().excute(data);
+        // return dto;
         return this.userRepository.list();
+        
     }
 
     listOne(guid: string) {
@@ -27,7 +33,7 @@ export default class UserApplication {
         return this.userRepository.update(user) 
     }
 
-    delete(user: User) {
-        return this.userRepository.delete(user);
-    } 
+    // delete(user: User) {
+    //     return this.userRepository.delete(user);
+    // } 
 }

@@ -1,11 +1,16 @@
 import { v4 as uuidv4 } from 'uuid';
 import User, { UserProperties } from './user';
+import { EmailVO } from './value-objects/email.vo';
 
 export default class UserFactory {
+
+//Acá pueden
+
     create(
         name: string,
         lastname: string,
-        email: string,
+        // email: string,
+        email :  EmailVO,
         password: string
     ){
         const userPropierties : UserProperties = {
