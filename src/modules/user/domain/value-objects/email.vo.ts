@@ -1,12 +1,18 @@
+import { ValueObject } from "./vo.class";
+
 interface EmailProps {
     value: String;
 }
 
-export class EmailVO {
-    private readonly props : EmailProps;
+export class EmailVO extends ValueObject<EmailProps> {
+    //Se elimina por que lo inicializa la calse abstracta
+    // private readonly props : EmailProps;
 
     private constructor(props: EmailProps){
-        this.props = props;
+        //En lugar de hacer esta linea
+        //llamamos al contructor de la clase.. que ya lo hace
+        //this.props = props;
+        super(props);
     }
 
     static create (email: String) {

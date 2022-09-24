@@ -24,3 +24,6 @@ comparación: Al comparar la encapsulación con la abstracción, la abstracción
 Nota* Servicios por capa : Recordadr que extraer la complejidad de cada capa, a esa logica que ha sido extraida
 se le llama servicio, pueden haber servicio de aplicación, servicio de infraestructura, servicios de dominio, 
 ejemplo la encriptación del password
+
+Nota* Si tienes una clase que esta herando de 
+otra y esta tiene un costructor, se deb
