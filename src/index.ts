@@ -1,7 +1,7 @@
 import app from "./app";
 import ServerBootstrap, {Bootstrap} from "./boottrap/server.bootstrap";
 
-// const application = new app();
+// const application = new app();;
 //Se comento para aplicar express
 //const serverBootstrap: Bootstrap = new ServerBootstrap(app.requestListener);
 //Ahora serverbootstrap recibirá un objeto express que contiene las rutas y otras propiedades
