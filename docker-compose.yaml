@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  mysql-server:
+    image: mysql:8
+    container_name: mysqlserver
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
+      - MYSQL_USER=dev
+      - MYSQL_PASSWORD=12345
+      - MYSQL_DATABASE=dventasw
+    ports:
+      - "3307:3306"
+    networks:
+      - "net-developer"
+    volumes:
+      - data-mysql-vol:/var/lib/mysql
+networks:
+  net-developer:       
+
+volumes:
+  data-mysql-vol:

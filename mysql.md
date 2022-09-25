@@ -71,3 +71,17 @@ docker run -d --name mysqlserver -e MYSQL_ROOT_PASSWORD=12345 mysql:8
 docker run -d  -<Puerto HOST>:<Puerto CONTAINER-DOCKER>  --name <NOMBRE DEL CONTENEDOR> -e  <VARIABLE DE ENTORNO>=<VALOR> -e  <VARIABLE DE ENTORNO2>=<VALOR> <Nombre de la imagen>:<Versión>
 docker run -d -p 3310:3306 --name mysqlserver -e MYSQL_ROOT_PASSWORD=12345 mysql:8 
 docker run -d -p 3310:3306 --name mysqlserver -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_USER=user -e MYSQL_PASSWORD=1234 -e MYSQL_DATABASE=bdventas mysql:8 
+
+
+# ADD VOLUMEN - No vincula, variable de entorno,  nombre al contenerdor y conexión con el puerto host interno 
+docker run -d  -<Puerto HOST>:<Puerto CONTAINER-DOCKER>  --name <NOMBRE DEL CONTENEDOR> -e  <VARIABLE DE ENTORNO>=<VALOR> -e  <VARIABLE DE ENTORNO2>=<VALOR> -v <DIRECCION DE CARPETA/VOLUMEN>:<SE DIRECCIONA A LA CARPETA DE MYSQL DENTO DEL CONTENEDOR> <Nombre de la imagen>:<Versión>
+
+docker run -d -p 3310:3306 --name mysqlserver -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_USER=user -e MYSQL_PASSWORD=1234 -e MYSQL_DATABASE=bdventas -v D:\Edu\ClasesNode\NODEJS_GRUPO10_1\clsnode\vol-mysql:/var/lib/mysql mysql:8 
+
+
+# lOS VOLUMENES SE USAN PARA PERSISITIR LA INFORMACIÓN FUERA DE LOS CONTENEDRORES DE DOCKER
+
+HOST = CARPETAS QUE SE VINCULAN CON LAS CARPETAS DEL CONTENEDOR DE DOCKER
+NOMBRADOS = son los qu existen previamente - sE LES DICE ASI POR Q TIENEN UN NOMBRE
+ANÓNIMO = No se necesita especificar una ruta ni el nombre de un olumen, Solo se epecifica la ruta dentro del contenedor.
+a diferencia de los de tipo host no especificamos rutas, solo indicamos el nombre
