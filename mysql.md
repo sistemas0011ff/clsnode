@@ -68,5 +68,6 @@ docker run -d --name mysqlserver -e MYSQL_ROOT_PASSWORD=12345 mysql:8
 
 
 # No vincula, variable de entorno,  nombre al contenerdor y conexión con el puerto host interno 
-docker run -d  -<Puerto HOST>:<Puerto DOCKER>  --name <NOMBRE DEL CONTENEDOR> -e  <VARIABLE DE ENTORNO>=<VALOR> <Nombre de la imagen>:<Versión>
+docker run -d  -<Puerto HOST>:<Puerto CONTAINER-DOCKER>  --name <NOMBRE DEL CONTENEDOR> -e  <VARIABLE DE ENTORNO>=<VALOR> -e  <VARIABLE DE ENTORNO2>=<VALOR> <Nombre de la imagen>:<Versión>
 docker run -d -p 3310:3306 --name mysqlserver -e MYSQL_ROOT_PASSWORD=12345 mysql:8 
+docker run -d -p 3310:3306 --name mysqlserver -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_USER=user -e MYSQL_PASSWORD=1234 -e MYSQL_DATABASE=bdventas mysql:8 
