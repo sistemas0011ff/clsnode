@@ -23,3 +23,7 @@ docker compose up -d <NAME SERVICES>
 
 # Nota 
 docker run : Permite crear un contenedor desde una imagen
+
+
+# Lectura
+Docker ha utilizado la convención de nomenclatura de ps de Linux; ps significa 'estado del proceso' en Linux, y los contenedores en realidad se ejecutan como un proceso en el servidor Linux; es por eso que se usa 'docker ps' para enumerar los contenedores.
