@@ -5,12 +5,18 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class User {
 
     @PrimaryGeneratedColumn() //Hace que el campo sea PK y Auto Incremental
-    id: number
+    id: number;
 
     @Column()
-    name: string
+    name: string;
 
     @Column()
-    lastname: string
+    lastname: string;
+
+    @Column()
+    email: string;
+
+    @Column()
+    age: number;
 
 }
