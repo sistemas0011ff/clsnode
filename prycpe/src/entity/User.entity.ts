@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Car } from "./Car.entity";
 
 
 @Entity()
@@ -18,5 +19,8 @@ export class User {
 
     @Column()
     age: number;
+
+    @OneToOne((type => Car), car => car.user, { cascade : true })
+    car: Car;
 
 }

@@ -1,47 +1,74 @@
-console.log("test");
 
-import { SimpleConsoleLogger } from "typeorm";
 import { AppDataSource } from "./data-source";
+import { Car } from "./entity/Car.entity";
 import { User } from "./entity/User.entity";
 
 AppDataSource.initialize()
 .then( async (conn)=> {
-    // console.log(conn)
-    //Se le puede pasar el nombre de la instanccia
-    // const userRepository = conn.getRepository("User");
-    //Se le puede pasar el nombre de la instanccia
+     
+
+    //Forma 2: Insertar modo cascada
     const userRepository = conn.getRepository(User);
-    const listUsers = await userRepository.find();
+    // const carRepository = conn.getRepository(Car);
 
-    const user = await userRepository.findOne({ where : {id: 1}})
+    const car = new Car();
+    car.brand = "Frond";
+    car.model = "Mustang";
+    car.year = 1332;
+    car.color = "black";
+    
+    // await carRepository.save(car);
+ 
 
+    const user = new User();
+    user.name = "Eduardo";
+    user.lastname = "Fajardo";
+    user.age = 99;
+    user.email = "efajardo@gmai.com";
+    user.car = car;
+    const userInserted = await userRepository.save(user);
+    console.log("userInserted: ", userInserted);
 
-    console.log("find",listUsers);
+    // const user2 = new User();
+    // user2.name = "XXXXXXX";
+    // user2.lastname = "Fajardo";
+    // user2.age = 99;
+    // user2.email = "efajardo@gmai.com";
+    // user2.car = car;
+    // const userInserted2 = await userRepository.save(user2);
+    // console.log("userInserted: ", userInserted2);
 
-    console.log("finone",user);
+    /* //Forma uno donde se evidencia de 1 a 1
+    const userRepository = conn.getRepository(User);
+    const carRepository = conn.getRepository(Car);
 
+    const car = new Car();
+    car.brand = "Frond";
+    car.model = "Mustang";
+    car.year = 1332;
+    car.color = "black";
+    
+    await carRepository.save(car);
+ 
 
-    // Agregando un usuario
+    const user = new User();
+    user.name = "Eduardo";
+    user.lastname = "Fajardo";
+    user.age = 99;
+    user.email = "efajardo@gmai.com";
+    user.car = car;
+    const userInserted = await userRepository.save(user);
+    console.log("userInserted: ", userInserted);
+    const user2 = new User();
+    user2.name = "XXXXXXX";
+    user2.lastname = "Fajardo";
+    user2.age = 99;
+    user2.email = "efajardo@gmai.com";
+    user2.car = car;
+    const userInserted2 = await userRepository.save(user2);
+    console.log("userInserted: ", userInserted2);
 
-    const userEntity = new User();
-    userEntity.name = "Juan";
-    userEntity.lastname = "Rodriguéz";
-    userEntity.email = "efajardo@gmail.com"
-    userEntity.age = 3000;
-
-    // const userSave = await userRepository.save(userEntity);
-    // console.log("userSave",userSave);
-
-    //Devuelve un registro
-    const user3000 = await userRepository.findOne({where : { age : 3000 }});
-    console.log("user3000", user3000);
-
-    const user3000a = await userRepository.find({where : { age : 3000 }});
-    console.log("user3000a" , user3000a);
-
-    const [ filas, columndata ] =  await userRepository.findAndCount();
-    console.log("Fin and count",filas, columndata);
-
+    */
 
 })
 .catch( console.log );
