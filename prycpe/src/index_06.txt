@@ -17,10 +17,10 @@ AppDataSource.initialize()
     console.log("Users: ", JSON.stringify(users,null , "\t"));
 
     // const users = await userRepository.find();
-    // const cars = await carRepository.find({relations:["users"]});
+    const cars = await carRepository.find({relations:["users"]});
     // console.log("Users: ", users);
-    // console.log("Users : ", JSON.stringify(users,null , "\t"));
-    
+    console.log("Users : ", JSON.stringify(users,null , "\t"));
+    console.log("Cars : ", JSON.stringify(cars,null , "\t"));
 
 })
 .catch( console.log );

@@ -1,4 +1,5 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { type } from "os";
+import { Column, Entity, ManyToMany, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Car } from "./Car.entity";
 
 
@@ -20,7 +21,9 @@ export class User {
     @Column()
     age: number;
 
-    @OneToOne((type => Car), car => car.user, { cascade : true })
-    car: Car;
+    // @OneToOne((type => Car), car => car.user, { cascade : true })
+    // @OneToMany(type => Car, car => car.user , { cascade : true } )
+    @ManyToMany(type => Car, car => car.users, { cascade :  true , eager : true} )
+    cars: Car[];
 
 }
