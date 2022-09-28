@@ -7,11 +7,13 @@ AppDataSource.initialize()
    
     const medic = await AppDataSource.manager
     .createQueryBuilder()
-    .from(Medic, "medico")
-    .where("medico.age between :age1 and :age2",{age1: 0, age2:19})
-    // .getMany();
-    .getRawMany();
+    .select(["medic.id","medic.name"])
+    .from(Medic,"medic")
+    .where("medic.id = :id", {id : 5})
+    .getOne();
+    
     console.log( JSON.stringify(medic ,null,"\t"));
+    
 
 })
 .catch( console.log );

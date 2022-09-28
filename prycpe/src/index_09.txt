@@ -1,0 +1,28 @@
+
+import { json } from "body-parser";
+import { Console } from "console";
+import { AppDataSource } from "./data-source";
+import { Car } from "./entity/Car.entity";
+import { Medic } from "./entity/Medic.entity";
+import { User } from "./entity/User.entity";
+
+AppDataSource.initialize()
+.then( async (conn)=> {
+   
+    // const userRepository = conn.getRepository(User);
+
+    // const user = await userRepository.find();
+    // const car = await user[1].cars;
+    // console.log( JSON.stringify(user,null,"\t"));
+    // console.log( JSON.stringify(car,null,"\t"));
+
+    const medicRepository = conn.getRepository(Medic);
+    const mediclist = await medicRepository.find({order: {lastname: "DESC", name:"ASC"}});
+
+    console.log( JSON.stringify(mediclist,null,"\t"));
+    
+
+    
+
+})
+.catch( console.log );

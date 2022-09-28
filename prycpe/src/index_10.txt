@@ -1,0 +1,39 @@
+
+import { json } from "body-parser";
+import { Console } from "console";
+import { AppDataSource } from "./data-source";
+import { Car } from "./entity/Car.entity";
+import { Medic } from "./entity/Medic.entity";
+import { User } from "./entity/User.entity";
+
+AppDataSource.initialize()
+.then( async (conn)=> {
+   
+    //Paggination
+    //Tamaño de dato por página
+    const PAGE_SIZE = 4;
+    //Que pagina quiero ver
+    const page = 0;
+
+    const medicRepository = await conn.getRepository(Medic);
+    //Muestra todo en uno
+    // const medic =  await medicRepository.findAndCount(
+    //Muestra tuplas por separado
+    const [medic, ttlrecords] =  await medicRepository.findAndCount(
+        {
+            order: { lastname : "ASC" },
+            // skip: (page - 1) * PAGE_SIZE
+            skip: (page) * PAGE_SIZE,
+            take: PAGE_SIZE,
+        }
+    );
+
+
+    console.log( JSON.stringify(medic ,null,"\t"));
+    console.log( JSON.stringify(ttlrecords ,null,"\t"));
+    
+
+    
+
+})
+.catch( console.log );

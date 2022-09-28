@@ -23,7 +23,10 @@ export class User {
 
     // @OneToOne((type => Car), car => car.user, { cascade : true })
     // @OneToMany(type => Car, car => car.user , { cascade : true } )
-    @ManyToMany(type => Car, car => car.users, { cascade :  true , eager : true} )
-    cars: Car[];
+    // @ManyToMany(type => Car, car => car.users, { cascade :  true , eager : true} )
+    // cars: Car[];
+
+    @ManyToMany(type => Car, car => car.users, { cascade :  true /*, eager : true*/} )
+    cars: Promise<Car[]>;
 
 }
